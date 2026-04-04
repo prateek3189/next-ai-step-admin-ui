@@ -1,0 +1,236 @@
+import type {
+  AttendanceStatus,
+  Enrollment,
+  NotificationLog,
+  Payment,
+  Session,
+  Student,
+  Training,
+} from '../types'
+
+export const seedStudents: Student[] = [
+  {
+    student_id: 'stu-1',
+    name: 'Alex Rivera',
+    email: 'alex.rivera@email.com',
+    phone: '+1 555-0101',
+  },
+  {
+    student_id: 'stu-2',
+    name: 'Jordan Lee',
+    email: 'jordan.lee@email.com',
+    phone: '+1 555-0102',
+  },
+  {
+    student_id: 'stu-3',
+    name: 'Sam Patel',
+    email: 'sam.patel@email.com',
+    phone: '+1 555-0103',
+  },
+  {
+    student_id: 'stu-4',
+    name: 'Casey Morgan',
+    email: 'casey.morgan@email.com',
+    phone: '+1 555-0104',
+  },
+]
+
+export const seedTrainings: Training[] = [
+  {
+    training_id: 'trn-1',
+    title: 'Advanced React Patterns',
+    description:
+      'Deep dive into composition, performance, and scalable architecture for production React apps.',
+    category: 'Web Development',
+    trainer_name: 'Priya Sharma',
+    duration: '4 weeks',
+    price: 499,
+    max_seats: 30,
+    type: 'online',
+    status: 'published',
+    created_at: '2026-01-15T10:00:00.000Z',
+  },
+  {
+    training_id: 'trn-2',
+    title: 'Leadership Essentials',
+    description:
+      'Foundations of team leadership, feedback, and stakeholder communication.',
+    category: 'Leadership',
+    trainer_name: 'Marcus Chen',
+    duration: '2 days',
+    price: 899,
+    max_seats: 20,
+    type: 'offline',
+    status: 'published',
+    created_at: '2026-02-01T14:30:00.000Z',
+  },
+  {
+    training_id: 'trn-3',
+    title: 'Data Literacy Workshop',
+    description:
+      'Interpret dashboards, ask better questions, and collaborate with data teams.',
+    category: 'Analytics',
+    trainer_name: 'Elena Vogt',
+    duration: '1 day',
+    price: 199,
+    max_seats: 50,
+    type: 'hybrid',
+    status: 'draft',
+    created_at: '2026-03-10T09:00:00.000Z',
+  },
+]
+
+export const seedSessions: Session[] = [
+  {
+    session_id: 'ses-1',
+    training_id: 'trn-1',
+    title: 'Composition & hooks',
+    date: '2026-04-12',
+    start_time: '10:00',
+    end_time: '12:30',
+    mode: 'online',
+    meeting_link: 'https://meet.example.com/react-1',
+    instructor: 'Priya Sharma',
+    notes: 'Bring your IDE.',
+    order: 0,
+  },
+  {
+    session_id: 'ses-2',
+    training_id: 'trn-1',
+    title: 'Performance tuning',
+    date: '2026-04-19',
+    start_time: '10:00',
+    end_time: '12:30',
+    mode: 'online',
+    meeting_link: 'https://meet.example.com/react-2',
+    instructor: 'Priya Sharma',
+    order: 1,
+  },
+  {
+    session_id: 'ses-3',
+    training_id: 'trn-2',
+    title: 'Day 1 — Foundations',
+    date: '2026-04-08',
+    start_time: '09:00',
+    end_time: '17:00',
+    mode: 'offline',
+    location: 'Conference Hall A, 100 Market St, SF',
+    instructor: 'Marcus Chen',
+    order: 0,
+  },
+  {
+    session_id: 'ses-4',
+    training_id: 'trn-2',
+    title: 'Day 2 — Practice labs',
+    date: '2026-04-09',
+    start_time: '09:00',
+    end_time: '16:00',
+    mode: 'offline',
+    location: 'Conference Hall A, 100 Market St, SF',
+    instructor: 'Marcus Chen',
+    order: 1,
+  },
+]
+
+const att: AttendanceStatus[] = ['present', 'absent', 'pending', 'late']
+
+export const seedEnrollments: Enrollment[] = [
+  {
+    enrollment_id: 'enr-1',
+    student_id: 'stu-1',
+    training_id: 'trn-1',
+    payment_status: 'paid',
+    enrollment_date: '2026-03-01T12:00:00.000Z',
+    attendance_status: att[0],
+  },
+  {
+    enrollment_id: 'enr-2',
+    student_id: 'stu-2',
+    training_id: 'trn-1',
+    payment_status: 'pending',
+    enrollment_date: '2026-03-05T09:15:00.000Z',
+    attendance_status: att[2],
+  },
+  {
+    enrollment_id: 'enr-3',
+    student_id: 'stu-3',
+    training_id: 'trn-2',
+    payment_status: 'paid',
+    enrollment_date: '2026-03-12T16:40:00.000Z',
+    attendance_status: att[2],
+  },
+  {
+    enrollment_id: 'enr-4',
+    student_id: 'stu-4',
+    training_id: 'trn-2',
+    payment_status: 'paid',
+    enrollment_date: '2026-03-18T11:00:00.000Z',
+    attendance_status: att[2],
+  },
+]
+
+export const seedPayments: Payment[] = [
+  {
+    payment_id: 'pay-1',
+    student_id: 'stu-1',
+    training_id: 'trn-1',
+    amount: 499,
+    payment_status: 'paid',
+    payment_method: 'Razorpay',
+    transaction_id: 'rzp_7xK9mN2pQ',
+    payment_date: '2026-03-01T12:05:00.000Z',
+  },
+  {
+    payment_id: 'pay-2',
+    student_id: 'stu-2',
+    training_id: 'trn-1',
+    amount: 499,
+    payment_status: 'pending',
+    payment_method: '—',
+    transaction_id: '—',
+    payment_date: null,
+  },
+  {
+    payment_id: 'pay-3',
+    student_id: 'stu-3',
+    training_id: 'trn-2',
+    amount: 899,
+    payment_status: 'paid',
+    payment_method: 'Stripe',
+    transaction_id: 'ch_3QkLmNoPqR',
+    payment_date: '2026-03-12T16:42:00.000Z',
+  },
+  {
+    payment_id: 'pay-4',
+    student_id: 'stu-4',
+    training_id: 'trn-2',
+    amount: 899,
+    payment_status: 'paid',
+    payment_method: 'Bank transfer',
+    transaction_id: 'wire_20260318_01',
+    payment_date: '2026-03-18T11:02:00.000Z',
+  },
+]
+
+export const seedNotifications: NotificationLog[] = [
+  {
+    notification_id: 'ntf-1',
+    channel: 'email',
+    event_type: 'Session reminder',
+    subject: 'Reminder: Advanced React — next session',
+    body: 'Your next session starts soon.',
+    training_id: 'trn-1',
+    sent_at: '2026-04-10T08:00:00.000Z',
+    recipient_count: 2,
+  },
+  {
+    notification_id: 'ntf-2',
+    channel: 'in_app',
+    event_type: 'Training announcement',
+    subject: 'Updated materials available',
+    body: 'Slides have been uploaded to the portal.',
+    training_id: 'trn-1',
+    sent_at: '2026-04-09T14:20:00.000Z',
+    recipient_count: 2,
+  },
+]
