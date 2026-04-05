@@ -25,7 +25,13 @@ export function LoginPage() {
   }
 
   return (
-    <form className="auth-form" onSubmit={handleSubmit}>
+    <form className="auth-form auth-form--login" onSubmit={handleSubmit}>
+      <div className="auth-form-block">
+        <h2 className="auth-form-heading">Sign in</h2>
+        <p className="auth-form-lead">
+          Use your admin email and password to access the dashboard.
+        </p>
+      </div>
       <label className="field">
         <span className="field-label">Email</span>
         <input

@@ -9,8 +9,11 @@ export function AuthLayout() {
           <span className="admin-brand-mark admin-brand-mark--lg" aria-hidden>
             <GraduationCap size={26} strokeWidth={1.75} />
           </span>
-          <div>
-            <h1 className="auth-title">Training Management</h1>
+          <div className="auth-brand-text">
+            <div className="auth-brand-title-row">
+              <h1 className="auth-title">Training Management</h1>
+              <span className="auth-brand-badge">Portal</span>
+            </div>
             <p className="auth-subtitle">Administrator portal</p>
           </div>
         </div>

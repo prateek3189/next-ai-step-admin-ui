@@ -62,7 +62,7 @@ export function DashboardPage() {
   }))
 
   return (
-    <div className="page page--full">
+    <div className="page page--full dashboard-page">
       <PageHeader
         title="Dashboard"
         description="Overview of trainings, enrollments, and revenue."
