@@ -1,5 +1,6 @@
 import type {
   AttendanceStatus,
+  Course,
   Enrollment,
   NotificationLog,
   Payment,
@@ -232,5 +233,28 @@ export const seedNotifications: NotificationLog[] = [
     training_id: 'trn-1',
     sent_at: '2026-04-09T14:20:00.000Z',
     recipient_count: 2,
+  },
+]
+
+export const seedCourses: Course[] = [
+  {
+    course_id: 'crs-1',
+    title: 'Intro to analytics',
+    description:
+      'Sample course with a hosted video. Add lessons with URLs or uploads in the editor.',
+    status: 'draft',
+    created_at: '2026-03-20T12:00:00.000Z',
+    updated_at: '2026-03-20T12:00:00.000Z',
+    lessons: [
+      {
+        lesson_id: 'les-seed-1',
+        title: 'Welcome',
+        order: 0,
+        video: {
+          kind: 'url',
+          url: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
+        },
+      },
+    ],
   },
 ]

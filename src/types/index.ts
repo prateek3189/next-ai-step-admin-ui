@@ -71,3 +71,27 @@ export interface NotificationLog {
   sent_at: string
   recipient_count: number
 }
+
+export type CourseStatus = 'draft' | 'published'
+
+/** URL stream, or uploaded file stored as data URL (demo; size-limited). */
+export type CourseLessonVideo =
+  | { kind: 'url'; url: string }
+  | { kind: 'upload'; fileName: string; dataUrl: string }
+
+export interface CourseLesson {
+  lesson_id: string
+  title: string
+  order: number
+  video: CourseLessonVideo
+}
+
+export interface Course {
+  course_id: string
+  title: string
+  description: string
+  status: CourseStatus
+  lessons: CourseLesson[]
+  created_at: string
+  updated_at: string
+}

@@ -16,8 +16,9 @@
   --input-bg-hover: #f8f9fc;
   --input-shadow: 0 1px 3px rgba(15, 17, 21, 0.06);
   --input-shadow-focus: 0 0 0 4px rgba(124, 58, 237, 0.18);
-  --input-transition: border-color 0.2s ease, box-shadow 0.2s ease,
-    background-color 0.2s ease, transform 0.15s ease;
+  --input-transition:
+    border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease,
+    transform 0.15s ease;
   /* Sidebar — midnight + slate (reference: SchoolSkout-style rail) */
   --sidebar: #12162b;
   --sidebar-2: #0b1020;
@@ -59,14 +60,14 @@
     var(--violet) 100%
   );
   --btn-border: rgba(91, 33, 182, 0.45);
-  --btn-shadow: 0 1px 0 rgba(255, 255, 255, 0.22) inset,
-    0 2px 4px rgba(91, 33, 182, 0.15),
+  --btn-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.22) inset, 0 2px 4px rgba(91, 33, 182, 0.15),
     0 8px 20px -4px rgba(124, 58, 237, 0.45);
-  --btn-shadow-hover: 0 1px 0 rgba(255, 255, 255, 0.26) inset,
-    0 3px 8px rgba(91, 33, 182, 0.18),
+  --btn-shadow-hover:
+    0 1px 0 rgba(255, 255, 255, 0.26) inset, 0 3px 8px rgba(91, 33, 182, 0.18),
     0 10px 22px -4px rgba(124, 58, 237, 0.38);
-  --btn-shadow-active: 0 1px 0 rgba(255, 255, 255, 0.14) inset,
-    0 2px 6px rgba(91, 33, 182, 0.22);
+  --btn-shadow-active:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset, 0 2px 6px rgba(91, 33, 182, 0.22);
   --danger: #c53030;
   --danger-bg: rgba(197, 48, 48, 0.08);
   --warning: #c05621;
@@ -81,8 +82,9 @@
   --radius-md: 10px;
   --radius-lg: 14px;
   --radius-xl: 20px;
-  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, sans-serif;
+  --font:
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --transition: 0.2s var(--ease-out);
 }
@@ -158,11 +160,12 @@ a:hover {
 }
 
 .admin-sidebar::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       ellipse 120% 80% at 0% 0%,
       rgba(79, 70, 229, 0.14) 0%,
       rgba(124, 58, 237, 0.08) 40%,
@@ -205,7 +208,8 @@ a:hover {
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.45),
+  box-shadow:
+    0 4px 18px rgba(124, 58, 237, 0.45),
     0 0 0 1px rgba(255, 255, 255, 0.12) inset;
 }
 
@@ -290,7 +294,10 @@ a:hover {
   font-size: 0.9rem;
   font-weight: 500;
   border: 1px solid transparent;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -331,7 +338,10 @@ a:hover {
   background: var(--sidebar-icon-tile);
   border: 1px solid var(--sidebar-icon-border);
   color: rgba(255, 255, 255, 0.88);
-  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
     color 0.2s ease;
 }
 
@@ -481,7 +491,8 @@ a:hover {
   padding: 2rem 2.25rem 3rem;
   position: relative;
   background-color: transparent;
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       ellipse 95% 65% at 100% 0%,
       rgba(124, 58, 237, 0.09),
       transparent 54%
@@ -500,7 +511,7 @@ a:hover {
 }
 
 .admin-main::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
@@ -537,7 +548,7 @@ a:hover {
 }
 
 .page-header::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -583,7 +594,7 @@ a:hover {
 .page-description {
   margin: 0;
   color: var(--muted);
-  max-width: 52ch;
+  max-width: 100%;
   font-size: 0.95rem;
   font-weight: 450;
 }
@@ -639,7 +650,9 @@ a:hover {
   text-decoration: none;
   padding: 0.35rem 0.65rem;
   border-radius: var(--radius-md);
-  transition: background var(--transition), color var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 
 .dashboard-block-link:hover {
@@ -653,14 +666,18 @@ a:hover {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-strong);
   background: var(--surface);
-  box-shadow: var(--shadow-card), var(--shadow-md),
+  box-shadow:
+    var(--shadow-card),
+    var(--shadow-md),
     inset 0 1px 0 rgba(255, 255, 255, 0.92);
   overflow: hidden;
-  transition: box-shadow var(--transition), border-color var(--transition);
+  transition:
+    box-shadow var(--transition),
+    border-color var(--transition);
 }
 
 .udemy-table-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -752,7 +769,9 @@ a:hover {
 .dashboard-page .stat-card {
   background: linear-gradient(155deg, #ffffff 0%, #f8f5ff 55%, #f5f3ff 100%);
   border-color: rgba(124, 58, 237, 0.16);
-  box-shadow: var(--shadow-card), var(--shadow-sm),
+  box-shadow:
+    var(--shadow-card),
+    var(--shadow-sm),
     0 4px 20px -4px rgba(124, 58, 237, 0.12);
 }
 
@@ -786,14 +805,18 @@ a:hover {
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
   padding: 1.35rem 1.5rem;
-  box-shadow: var(--shadow-card), var(--shadow-sm),
+  box-shadow:
+    var(--shadow-card),
+    var(--shadow-sm),
     inset 0 1px 0 rgba(255, 255, 255, 0.92);
-  transition: box-shadow var(--transition), border-color var(--transition);
+  transition:
+    box-shadow var(--transition),
+    border-color var(--transition);
   position: relative;
 }
 
 .card:not(.card--flush)::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 1.25rem;
@@ -838,7 +861,7 @@ a:hover {
 }
 
 .card-title::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0.12em;
@@ -885,11 +908,13 @@ a:hover {
   padding: 1.2rem 1.25rem 1.3rem;
   box-shadow: var(--shadow-card), var(--shadow-sm);
   overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 
 .stat-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -924,7 +949,7 @@ a:hover {
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text-heading);
-  font-feature-settings: 'tnum' on;
+  font-feature-settings: "tnum" on;
 }
 
 .stat-card-hint {
@@ -1071,7 +1096,9 @@ a:hover {
   cursor: pointer;
   font-family: inherit;
   line-height: 1;
-  transition: color 0.18s ease, background 0.18s ease;
+  transition:
+    color 0.18s ease,
+    background 0.18s ease;
 }
 
 .table-icon-btn:hover:not(:disabled) {
@@ -1139,8 +1166,12 @@ a.table-icon-btn:visited {
   background: var(--btn-gradient);
   border-color: var(--btn-border);
   box-shadow: var(--btn-shadow);
-  transition: border-color 0.22s ease, box-shadow 0.22s ease,
-    transform 0.18s ease, filter 0.22s ease, opacity 0.22s ease;
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.18s ease,
+    filter 0.22s ease,
+    opacity 0.22s ease;
 }
 
 .btn:visited {
@@ -1289,9 +1320,9 @@ a.table-icon-btn:visited {
 }
 
 /* Native date/time pickers */
-.input[type='date'],
-.input[type='time'],
-.input[type='datetime-local'] {
+.input[type="date"],
+.input[type="time"],
+.input[type="datetime-local"] {
   min-height: 2.65rem;
   cursor: pointer;
 }
@@ -1345,18 +1376,26 @@ select.input option {
   padding: 1.85rem 2rem 2rem;
   border: 1px solid var(--border-strong);
   background: linear-gradient(165deg, #ffffff 0%, #fafbfc 100%);
-  box-shadow: var(--shadow-card), 0 4px 24px rgba(79, 70, 229, 0.04);
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow:
+    var(--shadow-card),
+    0 4px 24px rgba(79, 70, 229, 0.04);
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .form-card.card:hover {
   border-color: rgba(124, 58, 237, 0.18);
-  box-shadow: var(--shadow-card), 0 8px 32px rgba(79, 70, 229, 0.07);
+  box-shadow:
+    var(--shadow-card),
+    0 8px 32px rgba(79, 70, 229, 0.07);
 }
 
 .form-card.card:focus-within {
   border-color: rgba(124, 58, 237, 0.22);
-  box-shadow: var(--shadow-card), 0 0 0 1px rgba(124, 58, 237, 0.12),
+  box-shadow:
+    var(--shadow-card),
+    0 0 0 1px rgba(124, 58, 237, 0.12),
     0 12px 40px rgba(79, 70, 229, 0.08);
 }
 
@@ -1404,7 +1443,9 @@ select.input option {
 /* Notifications compose card */
 .notifications-layout .card form,
 .settings-grid .card {
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .notifications-layout .card:has(textarea:focus),
@@ -1462,7 +1503,8 @@ select.input option {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       ellipse 100% 85% at 50% -32%,
       rgba(124, 58, 237, 0.26),
       transparent 56%
@@ -1477,13 +1519,7 @@ select.input option {
       rgba(167, 139, 250, 0.16),
       transparent 52%
     ),
-    linear-gradient(
-      165deg,
-      #e9e3ff 0%,
-      #f0f2f5 38%,
-      #ede9fe 72%,
-      #f5f3ff 100%
-    );
+    linear-gradient(165deg, #e9e3ff 0%, #f0f2f5 38%, #ede9fe 72%, #f5f3ff 100%);
 }
 
 .auth-panel {
@@ -1495,14 +1531,16 @@ select.input option {
   -webkit-backdrop-filter: blur(20px);
   border-radius: var(--radius-xl);
   padding: 2.25rem 2rem 2rem;
-  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.65) inset,
+  box-shadow:
+    var(--shadow-lg),
+    0 0 0 1px rgba(255, 255, 255, 0.65) inset,
     0 12px 40px rgba(79, 70, 229, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.55);
   overflow: hidden;
 }
 
 .auth-panel::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1648,7 +1686,9 @@ select.input option {
 
 .auth-shell .input:focus {
   border-color: var(--purple);
-  box-shadow: var(--input-shadow-focus), var(--input-shadow),
+  box-shadow:
+    var(--input-shadow-focus),
+    var(--input-shadow),
     0 0 0 1px rgba(124, 58, 237, 0.12);
 }
 
@@ -1665,7 +1705,9 @@ select.input option {
   padding: 0.45rem 0.85rem;
   border-radius: var(--radius-md);
   color: var(--indigo-deep);
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .auth-shell .auth-footer-text .link:hover {
@@ -1737,7 +1779,8 @@ select.input option {
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: none;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       ellipse 140% 90% at 50% -30%,
       rgba(167, 139, 250, 0.14) 0%,
       transparent 52%
@@ -1748,7 +1791,9 @@ select.input option {
       transparent 45%
     ),
     linear-gradient(180deg, #fdfcff 0%, #f5f4fa 38%, #f0f1f6 100%);
-  box-shadow: var(--shadow-lg), 0 28px 72px rgba(55, 48, 120, 0.18),
+  box-shadow:
+    var(--shadow-lg),
+    0 28px 72px rgba(55, 48, 120, 0.18),
     0 0 0 1px rgba(255, 255, 255, 0.65) inset;
   animation: modal-panel-in 0.28s var(--ease-out);
   min-height: 0;
@@ -1786,7 +1831,8 @@ select.input option {
     var(--purple) 62%,
     var(--violet) 100%
   );
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.14) inset,
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
     0 8px 28px rgba(55, 48, 120, 0.2);
 }
 
@@ -1813,7 +1859,9 @@ select.input option {
   color: rgba(255, 255, 255, 0.88);
   background: transparent;
   cursor: pointer;
-  transition: background var(--transition), color var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 
 .modal-close:hover {
@@ -1869,7 +1917,8 @@ select.input option {
   );
   border-bottom-left-radius: var(--radius-xl);
   border-bottom-right-radius: var(--radius-xl);
-  box-shadow: 0 -12px 32px rgba(79, 70, 229, 0.07),
+  box-shadow:
+    0 -12px 32px rgba(79, 70, 229, 0.07),
     0 -1px 0 rgba(255, 255, 255, 0.85) inset;
 }
 
@@ -1899,18 +1948,17 @@ select.input option {
 
 .sessions-timeline-card {
   border: 1px solid var(--border-strong);
-  background: linear-gradient(
-    165deg,
-    #ffffff 0%,
-    #faf9ff 45%,
-    #fafbfc 100%
-  );
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  background: linear-gradient(165deg, #ffffff 0%, #faf9ff 45%, #fafbfc 100%);
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .sessions-timeline-card:hover {
   border-color: rgba(124, 58, 237, 0.16);
-  box-shadow: var(--shadow-card), 0 6px 28px rgba(79, 70, 229, 0.06);
+  box-shadow:
+    var(--shadow-card),
+    0 6px 28px rgba(79, 70, 229, 0.06);
 }
 
 .session-form {
@@ -1953,13 +2001,14 @@ select.input option {
     var(--purple) 50%,
     var(--indigo) 100%
   );
-  box-shadow: 0 0 0 3px var(--accent-muted),
+  box-shadow:
+    0 0 0 3px var(--accent-muted),
     0 2px 8px var(--accent-glow);
   z-index: 1;
 }
 
 .timeline-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 4px;
   top: 1.25rem;
@@ -2152,5 +2201,280 @@ select.input option {
 
   .page-title {
     font-size: 1.4rem;
+  }
+}
+
+/* Courses editor */
+.course-editor-page .course-editor-form.form-card,
+.course-editor-page .form-card.card {
+  max-width: none;
+  width: 100%;
+}
+
+.course-editor-page-header .course-editor-page-header-titles {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.course-editor-back {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 0.15rem;
+  border-radius: var(--radius-lg);
+  color: var(--text-heading);
+  background: linear-gradient(165deg, #ffffff 0%, #faf8ff 100%);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.08);
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease,
+    color 0.15s ease;
+}
+
+.course-editor-back:hover {
+  text-decoration: none;
+  color: var(--indigo-deep);
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.12);
+  transform: translateY(-1px);
+}
+
+.course-editor-form-topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: -0.35rem 0 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(22, 23, 26, 0.08);
+}
+
+.course-editor-meta.form-grid {
+  max-width: none;
+}
+
+.course-editor-error {
+  margin: 0 0 1rem;
+}
+
+.course-lessons-block {
+  margin-top: 1.75rem;
+  width: 80%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.course-lessons-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.course-lessons-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.course-lessons-split {
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.course-lesson-list {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  align-self: start;
+  position: sticky;
+  top: 1rem;
+}
+
+.course-lesson-list-items {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  max-height: min(70vh, 560px);
+  overflow-y: auto;
+}
+
+.course-lesson-list-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  margin: 0;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.course-lesson-list-btn:hover {
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.course-lesson-list-btn--active {
+  background: linear-gradient(
+    145deg,
+    rgba(99, 102, 241, 0.12) 0%,
+    rgba(124, 58, 237, 0.1) 100%
+  );
+  box-shadow: inset 3px 0 0 0 var(--indigo);
+  font-weight: 700;
+}
+
+.course-lesson-list-num {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--indigo-deep);
+  background: rgba(124, 58, 237, 0.12);
+}
+
+.course-lesson-list-btn--active .course-lesson-list-num {
+  background: rgba(79, 70, 229, 0.2);
+  color: var(--indigo-deep);
+}
+
+.course-lesson-list-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.course-lesson-detail {
+  padding: 1.25rem 1.35rem;
+  min-width: 0;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-strong);
+  background: linear-gradient(165deg, #ffffff 0%, #fafbfc 100%);
+}
+
+.course-lesson-detail-empty {
+  margin: 0;
+  padding: 2rem 0.5rem;
+  text-align: center;
+}
+
+.course-lesson-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.course-lesson-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.course-lesson-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.course-video-fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+}
+
+.course-video-fieldset .field-label {
+  margin-bottom: 0.5rem;
+}
+
+.course-video-mode {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.course-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.course-radio input {
+  accent-color: var(--indigo);
+}
+
+.course-upload-meta {
+  margin: 0.45rem 0 0;
+  font-size: 0.82rem;
+}
+
+.course-video-preview {
+  margin-top: 1rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(22, 23, 26, 0.1);
+  background: #0f0f12;
+}
+
+.course-video-el {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  vertical-align: middle;
+}
+
+@media (max-width: 900px) {
+  .course-lessons-split {
+    grid-template-columns: 1fr;
+  }
+
+  .course-lesson-list {
+    position: relative;
+    top: 0;
+    max-height: none;
+  }
+
+  .course-lesson-list-items {
+    max-height: 240px;
   }
 }

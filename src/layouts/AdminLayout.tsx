@@ -3,6 +3,7 @@ import {
   BookOpen,
   Calendar,
   ChevronRight,
+  Clapperboard,
   CreditCard,
   FileBarChart,
   GraduationCap,
@@ -22,6 +23,7 @@ const nav: {
 }[] = [
   { to: "/", label: "Dashboard", end: true, Icon: LayoutGrid },
   { to: "/trainings", label: "Trainings", Icon: BookOpen },
+  { to: "/courses", label: "Courses", Icon: Clapperboard },
   { to: "/sessions", label: "Sessions", Icon: Calendar },
   { to: "/enrollments", label: "Enrollments", Icon: Users },
   { to: "/payments", label: "Payments", Icon: CreditCard },

@@ -2,11 +2,13 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
 } from 'react'
 import {
+  seedCourses,
   seedEnrollments,
   seedNotifications,
   seedPayments,
@@ -17,6 +19,9 @@ import {
 import { newId } from '../utils/id'
 import type {
   AttendanceStatus,
+  Course,
+  CourseLesson,
+  CourseStatus,
   Enrollment,
   NotificationLog,
   Payment,
@@ -27,9 +32,25 @@ import type {
   TrainingStatus,
 } from '../types'
 
+const STORAGE_COURSES = 'tmap_admin_courses'
+
+function loadCoursesInitial(): Course[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_COURSES)
+    if (raw) {
+      const parsed = JSON.parse(raw) as Course[]
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed
+    }
+  } catch {
+    /* ignore */
+  }
+  return [...seedCourses]
+}
+
 interface DataContextValue {
   students: Student[]
   trainings: Training[]
+  courses: Course[]
   sessions: Session[]
   enrollments: Enrollment[]
   payments: Payment[]
@@ -54,6 +75,23 @@ interface DataContextValue {
       'notification_id' | 'sent_at' | 'recipient_count'
     > & { recipient_count?: number },
   ) => void
+  addCourse: (input: {
+    title: string
+    description: string
+    status: CourseStatus
+    lessons: CourseLesson[]
+  }) => Course
+  updateCourse: (
+    courseId: string,
+    input: {
+      title: string
+      description: string
+      status: CourseStatus
+      lessons: CourseLesson[]
+    },
+  ) => void
+  deleteCourse: (courseId: string) => void
+  setCourseStatus: (courseId: string, status: CourseStatus) => void
 }
 
 const DataContext = createContext<DataContextValue | null>(null)
@@ -63,6 +101,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [trainings, setTrainings] = useState<Training[]>(() => [
     ...seedTrainings,
   ])
+  const [courses, setCourses] = useState<Course[]>(loadCoursesInitial)
   const [sessions, setSessions] = useState<Session[]>(() => [...seedSessions])
   const [enrollments, setEnrollments] = useState<Enrollment[]>(() => [
     ...seedEnrollments,
@@ -70,6 +109,89 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [payments, setPayments] = useState<Payment[]>(() => [...seedPayments])
   const [notifications, setNotifications] = useState<NotificationLog[]>(
     () => [...seedNotifications],
+  )
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_COURSES, JSON.stringify(courses))
+    } catch {
+      /* quota exceeded — courses still work in memory for this session */
+    }
+  }, [courses])
+
+  const addCourse = useCallback(
+    (input: {
+      title: string
+      description: string
+      status: CourseStatus
+      lessons: CourseLesson[]
+    }) => {
+      const now = new Date().toISOString()
+      const course: Course = {
+        course_id: newId('crs'),
+        title: input.title.trim(),
+        description: input.description.trim(),
+        status: input.status,
+        lessons: input.lessons.map((l, i) => ({
+          ...l,
+          lesson_id: l.lesson_id || newId('les'),
+          order: i,
+        })),
+        created_at: now,
+        updated_at: now,
+      }
+      setCourses((prev) => [...prev, course])
+      return course
+    },
+    [],
+  )
+
+  const updateCourse = useCallback(
+    (
+      courseId: string,
+      input: {
+        title: string
+        description: string
+        status: CourseStatus
+        lessons: CourseLesson[]
+      },
+    ) => {
+      const now = new Date().toISOString()
+      setCourses((prev) =>
+        prev.map((c) => {
+          if (c.course_id !== courseId) return c
+          return {
+            ...c,
+            title: input.title.trim(),
+            description: input.description.trim(),
+            status: input.status,
+            lessons: input.lessons.map((l, i) => ({
+              ...l,
+              lesson_id: l.lesson_id || newId('les'),
+              order: i,
+            })),
+            updated_at: now,
+          }
+        }),
+      )
+    },
+    [],
+  )
+
+  const deleteCourse = useCallback((courseId: string) => {
+    setCourses((prev) => prev.filter((c) => c.course_id !== courseId))
+  }, [])
+
+  const setCourseStatus = useCallback(
+    (courseId: string, status: CourseStatus) => {
+      const now = new Date().toISOString()
+      setCourses((prev) =>
+        prev.map((c) =>
+          c.course_id === courseId ? { ...c, status, updated_at: now } : c,
+        ),
+      )
+    },
+    [],
   )
 
   const addTraining = useCallback(
@@ -180,6 +302,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     () => ({
       students,
       trainings,
+      courses,
       sessions,
       enrollments,
       payments,
@@ -188,6 +311,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
       updateTraining,
       deleteTraining,
       setTrainingStatus,
+      addCourse,
+      updateCourse,
+      deleteCourse,
+      setCourseStatus,
       addSession,
       updateSession,
       deleteSession,
@@ -200,6 +327,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     [
       students,
       trainings,
+      courses,
       sessions,
       enrollments,
       payments,
@@ -208,6 +336,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
       updateTraining,
       deleteTraining,
       setTrainingStatus,
+      addCourse,
+      updateCourse,
+      deleteCourse,
+      setCourseStatus,
       addSession,
       updateSession,
       deleteSession,

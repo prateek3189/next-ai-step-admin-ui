@@ -15,6 +15,7 @@ function formatMoney(n: number): string {
 export function DashboardPage() {
   const {
     trainings,
+    courses,
     sessions,
     enrollments,
     payments,
@@ -22,6 +23,9 @@ export function DashboardPage() {
   } = useData()
 
   const totalTrainings = trainings.length
+  const totalCourses = courses.length
+  const publishedCourses = courses.filter((c) => c.status === 'published')
+    .length
   const totalStudents = students.length
   const activeTrainings = trainings.filter(
     (t) => t.status === 'published',
@@ -74,6 +78,11 @@ export function DashboardPage() {
         </h2>
         <div className="stat-grid stat-grid--full">
           <StatCard label="Total trainings" value={totalTrainings} />
+          <StatCard
+            label="Courses"
+            value={totalCourses}
+            hint={`${publishedCourses} published`}
+          />
           <StatCard label="Total students" value={totalStudents} />
           <StatCard label="Active trainings" value={activeTrainings} />
           <StatCard label="Upcoming sessions" value={upcomingSessionCount} />

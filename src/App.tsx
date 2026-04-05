@@ -17,6 +17,8 @@ import { PaymentsPage } from './pages/payments/PaymentsPage'
 import { ReportsPage } from './pages/reports/ReportsPage'
 import { NotificationsPage } from './pages/notifications/NotificationsPage'
 import { SettingsPage } from './pages/settings/SettingsPage'
+import { CoursesListPage } from './pages/courses/CoursesListPage'
+import { CourseEditorPage } from './pages/courses/CourseEditorPage'
 
 export default function App() {
   return (
@@ -39,6 +41,8 @@ export default function App() {
             <Route path="/trainings" element={<TrainingsListPage />} />
             <Route path="/trainings/new" element={<CreateTrainingPage />} />
             <Route path="/trainings/:id/edit" element={<TrainingFormPage />} />
+            <Route path="/courses" element={<CoursesListPage />} />
+            <Route path="/courses/:id" element={<CourseEditorPage />} />
             <Route path="/sessions" element={<SessionsPage />} />
             <Route path="/enrollments" element={<EnrollmentsPage />} />
             <Route path="/payments" element={<PaymentsPage />} />
